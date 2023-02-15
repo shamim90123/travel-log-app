@@ -1,0 +1,18 @@
+#node as backend
+
+npm init -y 
+= to create empty package json file
+
+
+npm install body-parser cors express mongoose nodemon
+= install dependenices we need for node
+
+
+
+#REACT As Frontend
+
+npx create-react-app ./
+= to create react inside current project
+
+npm install axios moment react-file-base64 redux redux-thunk
+= install dependenices we need for react
