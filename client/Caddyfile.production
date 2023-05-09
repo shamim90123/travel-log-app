@@ -1,4 +1,4 @@
-mern.mysuperawesomesite.com:443 {
+74.235.82.175:443 {
   tls sid.palas@gmail.com
   root * /srv
   route {
