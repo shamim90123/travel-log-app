@@ -16,3 +16,6 @@ npx create-react-app ./
 
 npm install axios moment react-file-base64 redux redux-thunk
 = install dependenices we need for react
+
+
+run npm run start for both run

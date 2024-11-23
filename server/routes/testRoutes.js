@@ -5,16 +5,12 @@ const app = express()
 // checkout middleware for this routes
 app.use(logger)
 
+app.use((req, res) => {
+	res.status(404).send('Page not found');
+  });
+
 app.get('/', (req, res) => {
 	res.send('hello world!!')
-})
-
-app.get('/home', (req, res) => {
-	res.send('hello Home!!')
-})
-
-app.get('/about', (req, res) => {
-	res.send('hello About!!')
 })
 
 // routes name same but action are different
@@ -31,12 +27,24 @@ app.route('/city')
 		res.send('update the city')
 	})
 
+app.get('/user/:id', logMiddleware, (req, res) => {
+	const userId = req.params.id;
+	res.send(`User ID is ${userId}`);
+	});
 
-// middleware create
+
+
+// middleware for this routes
 function logger(req, res, next) {
 	console.log('test middleware create')
 	next()
 }
+
+// middleware for specific routes
+function logMiddleware (req, res, next) {
+	console.log(`Request to ${req.url}`);
+	next();
+  };
 
 
 
