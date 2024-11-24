@@ -5,6 +5,7 @@ import configureMiddlewares from './middleware/middlewares.js'; // Import middle
 import postRoutes from './routes/postRoutes.js';
 import testRoutes from './routes/testRoutes.js';
 import sampleRoutes from './routes/sampleRoutes.js';
+import loginRoutes from './routes/authRoutes.js';
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ configureMiddlewares(app);
 app.use('/posts', postRoutes);
 app.use('/tests', testRoutes);
 app.use('/sample', sampleRoutes);
+app.use('/auth', loginRoutes);
 
 if (!process.env.CONNECTION_URL) {
   console.error('Error: CONNECTION_URL is not defined in the environment variables.');
